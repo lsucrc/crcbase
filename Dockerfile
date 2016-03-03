@@ -5,7 +5,7 @@ FROM centos:7
 RUN yum install -y epel-release \
            expat expat-devel \
            which \
-           perl \
+           perl ruby \
            wget git \
            autoconf flex bison pkgconfig \
            install cmake make gcc gcc-c++ gcc-gfortran \
