@@ -4,6 +4,7 @@ FROM centos:7
 # install dependencies of swan model
 RUN yum install -y epel-release \
            expat expat-devel \
+           which \
            perl \
            wget git \
            autoconf flex bison pkgconfig \
