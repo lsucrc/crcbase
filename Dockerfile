@@ -18,3 +18,12 @@ RUN yum install -y epel-release \
 
 ENV PATH $PATH:/usr/lib64/openmpi/bin 
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64/openmpi/lib
+
+RUN mkdir /model
+
+RUN groupadd -r crcuser -g 433 && \
+useradd -u 431 -r -g crcuser -d /model -s /sbin/nologin -c "Docker image user" crcuser && \
+chown -R crcuser:crcuser /model
+
+
+
