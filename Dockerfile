@@ -6,6 +6,7 @@ RUN yum install -y epel-release \
            expat expat-devel \
            perl \
            wget git \
+           autoconf flex bison pkgconfig \
            install cmake make gcc gcc-c++ gcc-gfortran \
            libtool libtool-ltdl-devel \
            zip unzip \
