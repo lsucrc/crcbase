@@ -2,7 +2,7 @@
 FROM centos:7
 
 # install dependencies of swan model
-RUN yum -y epel-release \
+RUN yum install -y epel-release \
            expat expat-devel \
            perl \
            wget git \
@@ -16,7 +16,3 @@ RUN yum -y epel-release \
 
 ENV PATH $PATH:/usr/lib64/openmpi/bin 
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64/openmpi/lib
-
-
-
-
