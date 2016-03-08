@@ -1,7 +1,13 @@
 # add a base image
 FROM centos:7
 
-# install dependencies of swan model
+ENV CRCBASE_HOME=/model \
+    CRCBASE_USER=crcbase \
+    CRCBASE_UID=979 \
+    CRCBASE_GROUP=$CRCBASE_USER \
+    CRCBASE_GID=979
+    
+# install necessary packages
 RUN yum install -y epel-release \
            expat expat-devel \
            which \
@@ -19,11 +25,8 @@ RUN yum install -y epel-release \
 ENV PATH $PATH:/usr/lib64/openmpi/bin 
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64/openmpi/lib
 
-RUN mkdir /model
+RUN mkdir $CRCBASE_HOME
 
-RUN groupadd -r crcuser -g 433 && \
-useradd -u 431 -r -g crcuser -d /model -s /sbin/nologin -c "Docker image user" crcuser && \
-chown -R crcuser:crcuser /model
-
-
-
+RUN groupadd -r $CRCBASE_GROUP -g $CRCBASE_GID && \
+useradd -u $CRCBASE_UID -r -g $CRCBASE_USER -d $CRCBASE_HOME -s /sbin/nologin -c "Docker image user" $CRCBASE_USER && \
+chown -R $CRCBASE_USER:$CRCBASE_GROUP $CRCBASE_HOME
