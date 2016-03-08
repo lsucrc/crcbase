@@ -4,9 +4,9 @@ FROM centos:7
 ENV CRCBASE_HOME=/model \
     CRCBASE_USER=crcbase \
     CRCBASE_UID=979 \
-    CRCBASE_GROUP=$CRCBASE_USER \
+    CRCBASE_GROUP=crcbase \
     CRCBASE_GID=979
-    
+
 # install necessary packages
 RUN yum install -y epel-release \
            expat expat-devel \
