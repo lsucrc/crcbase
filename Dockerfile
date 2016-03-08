@@ -20,7 +20,10 @@ RUN yum install -y epel-release \
            openmpi openmpi-devel.x86_64 \
            openssh-clients openssh-server \
 	   tcl tcl-devel \
-           netcdf-devel
+           netcdf-devel \
+           libjpeg libxml2 \
+           glib2-devel \
+           ncurses-devel ncurses
 
 ENV PATH $PATH:/usr/lib64/openmpi/bin 
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/usr/lib64/openmpi/lib
