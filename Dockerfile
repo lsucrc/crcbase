@@ -3,9 +3,9 @@ FROM centos:7
 
 ENV CRCBASE_HOME=/model \
     CRCBASE_USER=crcuser \
-    CRCBASE_UID=979 \
+    CRCBASE_UID=65534 \
     CRCBASE_GROUP=crcuser \
-    CRCBASE_GID=979
+    CRCBASE_GID=65534
 
 # install necessary packages
 RUN yum install -y epel-release \
