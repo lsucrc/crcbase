@@ -26,7 +26,7 @@ RUN yum install -y epel-release \
            ncurses-devel ncurses
 
 ENV PATH=$PATH:/usr/lib64/openmpi/bin \
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib \
+    LD_LIBRARY_PATH=/usr/lib64/openmpi/lib \
     LD_PRELOAD=/usr/lib64/openmpi/lib/libmpi.so
 
 RUN mkdir $CRCBASE_HOME
